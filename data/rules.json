@@ -1,0 +1,401 @@
+[{
+    "_id" : "1",
+    "if" : [
+        {
+            "feature" : "mountains",
+            "value" : true
+        },
+        {
+            "feature" : "season",
+            "value" : "Зима"
+        }
+    ],
+    "then" : {
+        "feature" : "type",
+        "value" : "Активный зимний отдых"
+    }
+},
+{
+    "_id" : "2",
+    "if" : [
+        {
+            "feature" : "sea",
+            "value" : true
+        },
+        {
+            "feature" : "season",
+            "value" : "Зима"
+        }
+    ],
+    "then" : {
+        "feature" : "type",
+        "value" : "Зимний отдых на море"
+    }
+},
+{
+    "_id" : "3",
+    "if" : [
+        {
+            "feature" : "season",
+            "value" : "Лето"
+        },
+        {
+            "feature" : "sea",
+            "value" : true
+        },
+        {
+            "feature" : "nightlife",
+            "value" : false
+        },
+        {
+            "feature" : "family",
+            "value" : true
+        }
+    ],
+    "then" : {
+        "feature" : "type",
+        "value" : "Пассивный летний отдых"
+    }
+},
+{
+    "_id" : "4",
+    "if" : [
+        {
+            "feature" : "sights",
+            "value" : true
+        },
+        {
+            "feature" : "nightlife",
+            "value" : true
+        },
+        {
+            "feature" : "family",
+            "value" : false
+        }
+    ],
+    "then" : {
+        "feature" : "type",
+        "value" : "Молодежный отдых с приключениями"
+    }
+},
+{
+    "_id" : "5",
+    "if" : [
+        {
+            "feature" : "price",
+            "value" : "$"
+        },
+        {
+            "feature": "distance",
+            "value" : "Родина"
+        }
+    ],
+    "then" : {
+        "feature" : "tour",
+        "value" : "Беларусь"
+    }
+},
+{
+    "_id" : "6",
+    "if" : [
+        {
+            "feature" : "price",
+            "value" : "$"
+        },
+        {
+            "feature": "distance",
+            "value" : "Близко"
+        }
+    ],
+    "then" : {
+        "feature" : "tour",
+        "value" : "Россия"
+    }
+},
+{
+    "_id" : "7",
+    "if" : [
+        {
+            "feature" : "type",
+            "value" : "Пассивный летний отдых"
+        },
+        {
+            "feature": "culture",
+            "value" : "Мусульманская"
+        },
+        {
+            "feature" : "sights",
+            "value" : false
+        }
+    ],
+    "then" : {
+        "feature" : "tour",
+        "value" : "Турция"
+    }
+},
+{
+    "_id" : "8",
+    "if" : [
+        {
+            "feature" : "type",
+            "value" : "Пассивный летний отдых"
+        },
+        {
+            "feature" : "culture",
+            "value" : "Мусульманская"
+        },
+        {
+            "feature" : "sights",
+            "value" : true
+        }
+    ],
+    "then" : {
+        "feature" : "tour",
+        "value" : "Египет"
+    }
+},
+{
+    "_id" : "9",
+    "if" : [
+        {
+            "feature" : "type",
+            "value" : "Пассивный летний отдых"
+        },
+        {
+            "feature" : "culture",
+            "value" : "Западная"
+        },
+        {
+            "feature" : "price",
+            "value" : "$$"
+        }
+    ],
+    "then" : {
+        "feature" : "tour",
+        "value" : "Греция"
+    }
+},
+{
+    "_id" : "10",
+    "if" : [
+        {
+            "feature" : "type",
+            "value" : "Пассивный летний отдых"
+        },
+        {
+            "feature" : "culture",
+            "value" : "Западная"
+        },
+        {
+            "feature" : "price",
+            "value" : "$$$"
+        }
+    ],
+    "then" : {
+        "feature" : "tour",
+        "value" : "Италия"
+    }
+},
+{
+    "_id" : "11",
+    "if" : [
+        {
+            "feature" : "type",
+            "value" : "Активный зимний отдых"
+        },
+        {
+            "feature" : "sights",
+            "value" : true
+        },
+        {
+            "feature" : "price",
+            "value" : "$$$"
+        }
+    ],
+    "then" : {
+        "feature" : "tour",
+        "value" : "Швейцария"
+    }
+},
+{
+    "_id" : "12",
+    "if" : [
+        {
+            "feature" : "type",
+            "value" : "Активный зимний отдых"
+        },
+        {
+            "feature" : "sights",
+            "value" : true
+        },
+        {
+            "feature" : "price",
+            "value" : "$$"
+        }
+    ],
+    "then" : {
+        "feature" : "tour",
+        "value" : "Австрия"
+    }
+},
+{
+    "_id" : "13",
+    "if" : [
+        {
+            "feature" : "type",
+            "value" : "Активный зимний отдых"
+        },
+        {
+            "feature" : "sights",
+            "value" : false
+        }
+    ],
+    "then" : {
+        "feature" : "tour",
+        "value" : "Швеция"
+    }
+},
+{
+    "_id" : "14",
+    "if" : [
+        {
+            "feature" : "type",
+            "value" : "Молодежный отдых с приключениями"
+        },
+        {
+            "feature" : "price",
+            "value" : "$$$"
+        },
+        {
+            "feature" : "visa",
+            "value" : "Шенген"
+        }
+    ],
+    "then" : {
+        "feature" : "tour",
+        "value" : "Франция"
+    }
+},
+{
+    "_id" : "15",
+    "if" : [
+        {
+            "feature" : "type",
+            "value" : "Молодежный отдых с приключениями"
+        },
+        {
+            "feature" : "price",
+            "value" : "$$"
+        },
+        {
+            "feature" : "visa",
+            "value" : "Шенген"
+        }
+    ],
+    "then" : {
+        "feature" : "tour",
+        "value" : "Испания"
+    }
+},
+{
+    "_id" : "16",
+    "if" : [
+        {
+            "feature" : "type",
+            "value" : "Молодежный отдых с приключениями"
+        },
+        {
+            "feature" : "price",
+            "value" : "$$"
+        },
+        {
+            "feature" : "visa",
+            "value" : "Нет"
+        }
+    ],
+    "then" : {
+        "feature" : "tour",
+        "value" : "Куба"
+    }
+},
+{
+    "_id" : "17",
+    "if" : [
+        {
+            "feature" : "type",
+            "value" : "Молодежный отдых с приключениями"
+        },
+        {
+            "feature" : "price",
+            "value" : "$$$"
+        },
+        {
+            "feature" : "visa",
+            "value" : "Да"
+        }
+    ],
+    "then" : {
+        "feature" : "tour",
+        "value" : "США"
+    }
+},
+{
+    "_id" : "18",
+    "if" : [
+        {
+            "feature": "type",
+            "value": "Зимний отдых на море"
+        },
+        {
+            "feature" : "culture",
+            "value" : "Восточная"
+        },
+        {
+            "feature" : "family",
+            "value" : false
+        }
+    ],
+    "then" : {
+        "feature" : "tour",
+        "value" : "Таиланд"
+    }
+},
+{
+    "_id" : "19",
+    "if" : [
+        {
+            "feature": "type",
+            "value": "Зимний отдых на море"
+        },
+        {
+            "feature" : "culture",
+            "value" : "Восточная"
+        },
+        {
+            "feature" : "family",
+            "value" : true
+        }
+    ],
+    "then" : {
+        "feature" : "tour",
+        "value" : "Шри-Ланка"
+    }
+},
+{
+    "_id" : "20",
+    "if" : [
+        {
+            "feature": "type",
+            "value": "Зимний отдых на море"
+        },
+        {
+            "feature" : "culture",
+            "value" : "Мусульманская"
+        }
+    ],
+    "then" : {
+        "feature" : "tour",
+        "value" : "ОАЭ"
+    }
+}
+]
