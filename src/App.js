@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Spinner from './Spinner/Spinner';
 import swal from 'sweetalert';
-import { alg } from './alg';
+import { alg, getLogs } from './alg';
 import info from '../data/info.json';
 
 
@@ -96,7 +96,7 @@ class App extends Component {
                                 {info[this.state.result].description}
                             </p>
                             <a target="_blank" href={info[this.state.result].url}>{info[this.state.result].title}</a>
-                            <div style={{'margin-top': '20px'}}>
+                            <div style={{'marginTop': '20px'}}>
                                 <button onClick={() => window.location.reload()}>
                                         Еще Раз
                                 </button>
@@ -119,9 +119,25 @@ class App extends Component {
                         </div>
                     )}
 
+                    {
+                        this.state.isFinished && (
+                            <div className="center-button-container">
+                                <button className="log-button" onClick={this.showLogs} >
+                                    Посмотреть Логи
+                                </button>
+                            </div>
+                        )
+                    }
+
                 </div>
             </div>
         );
+    }
+
+    showLogs() {
+        const logs = getLogs();
+        const w = window.open('', 'logs');
+        w.document.body.innerHTML = `<code><pre>${JSON.stringify(logs, null, 4)}</pre></code>`;
     }
 
     showErrorMessage(msg) {

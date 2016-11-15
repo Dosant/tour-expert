@@ -77,6 +77,10 @@ header {
     margin-right: 5px;
 }
 
+.log-button {
+    border: none;
+}
+
 .rigth-button-container {
     text-align: right;
 }

@@ -1,5 +1,6 @@
 import features from '../data/features.json';
 import _rules from '../data/rules.json';
+import deepcopy from 'deepcopy';
 
 let rules = _rules;
 
@@ -28,15 +29,21 @@ const noQuestions = [
 const target = 'tour';
 let targetStack = [target];
 let result;
+let step = 0;
+const logs = [];
+let rule;
+let currentTarget;
 
 function startAlg(question, answer) {
     if (question) {
         knowledge[question] = answer;
+        log('Задаем вопрос: ' + question + ', получаем ответ: ' + answer);
     }
 
     while (!result) {
-        const currentTarget = targetStack[targetStack.length - 1];
-        const rule = rules.find((rule) =>
+        step++;
+        currentTarget = targetStack[targetStack.length - 1];
+        rule = rules.find((rule) =>
             (rule.then.feature === currentTarget));
         if (rule) {
             const checkResult = checkRule(rule.if);
@@ -44,17 +51,21 @@ function startAlg(question, answer) {
                 case true:
                     knowledge[targetStack.pop()] = rule.then.value;
                     if (targetStack.length === 0) {
+                        log('Нашли ответ: ' + rule.then.value);
                         result = true;
                     } else {
+                        log('Правило подходит! Принимаем правило: ', rule.then.value);
                         rules = rules.filter((_rule) => _rule !== rule);
                     }
                     break;
 
                 case false:
+                    log('Правило не подходит! Отбрасываем правило');
                     rules = rules.filter((_rule) => _rule !== rule);
                     break;
 
                 default:
+                    log('Не получается оценить истинность правила, добавляем новый признак в стек: ' + checkResult.feature);
                     targetStack.push(checkResult.feature);
                     break;
             }
@@ -76,6 +87,7 @@ function startAlg(question, answer) {
                 if (question !== target) {
                     knowledge[question] = knowledge[question] || false;
                 } else {
+                    log('Не смогли найти правило, результат не может быть получен');
                     result = true;
                 }
             }
@@ -89,12 +101,27 @@ function startAlg(question, answer) {
             result: knowledge[target]
         };
     } else {
-        return {isFinished: true};
+        return { isFinished: true };
+    }
+
+    function log(message) {
+        logs.push(deepcopy({
+            step,
+            rule,
+            knowledge,
+            targetStack,
+            currentTarget,
+            message
+        }));
     }
 }
 
 export function alg(q, a) {
     return startAlg(q, a);
+}
+
+export function getLogs() {
+    return logs;
 }
 
 function checkRule(conditions) {
