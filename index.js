@@ -2,7 +2,8 @@
 const fs = require('fs');
 
 const features = JSON.parse(fs.readFileSync('./data/features.json'));
-let rules = JSON.parse(fs.readFileSync('./data/rules.json'));
+let rules = JSON.parse(fs.readFileSync('./data/rules.1.json'));
+//let rules = JSON.parse(fs.readFileSync('./data/rules.json'));
 
 const needsChecking = features.reduce((prev, curr) => {
     if (curr.needsChecking) {

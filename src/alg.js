@@ -1,5 +1,7 @@
-import features from '../data/features.json';
-import _rules from '../data/rules.json';
+// import features from '../data/features.json';
+import features from '../data/features.1.json';
+import _rules from '../data/rules.1.json';
+//import _rules from '../data/rules.json';
 import deepcopy from 'deepcopy';
 
 let rules = _rules;
