@@ -42,7 +42,11 @@ end
 
 %  -- Алгоритм: Вопрос - Ответ - удаляем не подходящие варианты
 %  -- Собираем Результат
-
+[n, m] = size(table{1,2});
+if (m == 0)
+     msgbox('Please, adjust your requiremnts and try again. We were unable to find you the right tour.', 'Try Again')
+    return
+end
 answerIndexCell = table{1,2}(1,1);
 answerIndex = answerIndexCell{1,1};
 answer = table{2,2}(:, answerIndex);
